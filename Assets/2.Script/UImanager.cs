@@ -1,48 +1,59 @@
-using TMPro;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
-public class UImanager : MonoBehaviour
+/// <summary>
+/// 게임 UI 표시 및 결과 패널 관리
+/// </summary>
+public class UIManager : MonoBehaviour
 {
-    [Header("플레이어 컨트롤러")]
+    [Header("참조")]
     [SerializeField] private PlayerController playerController;
-
-    [Header("게임 매니저")]
     [SerializeField] private GameManager gameManager;
 
-    [Header("크기 표시용 텍스트")]
+    [Header("UI 텍스트")]
     [SerializeField] private TMP_Text sizeText;
+    [SerializeField] private TMP_Text timeText;
+    [SerializeField] private TMP_Text targetText;
 
-    [Header("타이머 표시용 텍스트")]
-    [SerializeField] private TMP_Text timerText;
-
-    [Header("게임 결과 패널")]
-    [SerializeField] private GameObject gameOverPanel;
+    [Header("결과 패널")]
     [SerializeField] private GameObject clearPanel;
+    [SerializeField] private GameObject gameOverPanel;
 
     private bool resultShown = false;
 
-    private void Update()
+    void Start()
     {
-        if (playerController == null || gameManager == null)
-            return;
-
-        // 크기 UI
-        float radius = playerController.GetRadius();
-        float diameter = radius * 2f;
-        if (sizeText != null)
-            sizeText.text = $"Size:\n{diameter:F2}cm";
-
-        // 타이머 UI
-        if (timerText != null)
+        // 목표 크기 텍스트 설정
+        if (gameManager != null && targetText != null)
         {
-            float currentTime = gameManager.CurrentTime;
-            int minutes = Mathf.FloorToInt(currentTime / 60);
-            int seconds = Mathf.FloorToInt(currentTime % 60);
-            timerText.text = $"{minutes:00}:{seconds:00}";
+            float target = gameManager.TargetDiameter;
+            targetText.text = $"Target: {target * 100f:F0}cm";
         }
 
-        // 게임 종료 시 결과 UI 표시
-        if (gameManager.IsGameOver && !resultShown)
+        // 결과 패널 비활성화
+        clearPanel?.SetActive(false);
+        gameOverPanel?.SetActive(false);
+    }
+
+    void Update()
+    {
+        if (playerController != null && sizeText != null)
+        {
+            float radius = playerController.GetRadius();
+            float diameter = radius * 2f;
+            sizeText.text = $"Size: \n{diameter * 100f:F2}cm";
+        }
+
+        if (gameManager != null && timeText != null)
+        {
+            float time = Mathf.Max(0f, gameManager.CurrentTime);
+            int min = Mathf.FloorToInt(time / 60f);
+            int sec = Mathf.FloorToInt(time % 60f);
+            timeText.text = $"Time: {min:00}:{sec:00}";
+        }
+
+        if (!resultShown && gameManager != null && gameManager.IsGameOver)
         {
             ShowGameResult();
             resultShown = true;
@@ -51,18 +62,19 @@ public class UImanager : MonoBehaviour
 
     private void ShowGameResult()
     {
-        float diameter = playerController.GetRadius() * 2f;
-        float target = gameManager.TargetDiameter;
+        Debug.Log($"[UI] 게임 결과 처리 - Cleared: {gameManager.IsCleared}");
 
-        if (diameter >= target)
+        if (gameManager.IsCleared)
         {
-            if (clearPanel != null)
-                clearPanel.SetActive(true);
+            clearPanel?.SetActive(true);
         }
         else
         {
-            if (gameOverPanel != null)
-                gameOverPanel.SetActive(true);
+            gameOverPanel?.SetActive(true);
         }
+    }
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
