@@ -11,10 +11,10 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
 
     [Header("붙임 크기 비율 (작을수록 큰 오브젝트가 쉽게 붙음)")]
-    [SerializeField]private float attachSizeRatio;
+    [SerializeField] private float attachSizeRatio = 1.5f;
 
     [Header("오브젝트 크기당 반지름 성장 비율")]
-    [SerializeField]private float growthRatio;
+    [SerializeField] private float growthRatio = 0.04f;
 
     private Rigidbody rb;
     private SphereCollider sphereCol;
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         if (input.sqrMagnitude == 0f)
             return;
 
-        // ?? 카메라 기준 forward/right 가져오기
+        // 카메라 기준 forward/right 가져오기
         Vector3 camForward = Camera.main.transform.forward;
         Vector3 camRight = Camera.main.transform.right;
 
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         camForward.Normalize();
         camRight.Normalize();
 
-        // ?? 카메라 기준으로 입력 방향 변환
+        // 카메라 기준으로 입력 방향 변환
         Vector3 moveDir = camForward * v + camRight * h;
 
         // 이동
@@ -65,67 +65,31 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(rotationAmount * rotateAxis, Space.World);
     }
 
-
-    // 오브젝트의 시각적 크기를 측정하는 함수
-    // 오브젝트 전체(자식 포함)의 콜라이더 크기를 측정하는 함수
-    private float GetObjectSize(GameObject obj)
+    // 플레이어의 현재 실제 반지름 반환 (localScale 고려)
+    public float GetRadius()
     {
-        float totalSize = 0f;
-
-        // 모든 Collider 가져오기 (자식 포함)
-        Collider[] colliders = obj.GetComponentsInChildren<Collider>();
-
-        foreach (var col in colliders)
-        {
-            Vector3 size = Vector3.zero;
-
-            if (col is BoxCollider box)
-            {
-                size = Vector3.Scale(box.size, box.transform.lossyScale);
-            }
-            else if (col is SphereCollider sphere)
-            {
-                float diameter = sphere.radius * 2f * sphere.transform.lossyScale.x;
-                size = new Vector3(diameter, diameter, diameter);
-            }
-            else if (col is CapsuleCollider capsule)
-            {
-                float radius = capsule.radius * capsule.transform.lossyScale.x;
-                float height = capsule.height * capsule.transform.lossyScale.y;
-                size = new Vector3(radius * 2f, height, radius * 2f);
-            }
-            else if (col is MeshCollider mesh && mesh.sharedMesh != null)
-            {
-                Bounds bounds = mesh.sharedMesh.bounds;
-                Vector3 scaledSize = Vector3.Scale(bounds.size, mesh.transform.lossyScale);
-                size = scaledSize;
-            }
-
-            float maxAxis = Mathf.Max(size.x, size.y, size.z);
-            totalSize += maxAxis;
-        }
-
-        return totalSize;
+        return sphereCol.radius * transform.localScale.x;
     }
-
 
     private void OnCollisionEnter(Collision collision)
     {
-        // "PickUp" 태그를 가진 오브젝트만 처리
-        if (collision.gameObject.CompareTag("PickUp"))
+        // PickupObject 스크립트가 붙어있는 오브젝트만 처리
+        if (!collision.gameObject.TryGetComponent<PickupObject>(out var pickup))
+            return;
+
+        // 플레이어의 실제 지름 계산
+        float playerDiameter = sphereCol.radius * transform.localScale.x * 2f;
+
+        // 픽업 오브젝트의 크기 값
+        float objectSize = pickup.GetSizeValue();
+
+        // 붙임 조건: 플레이어 지름 / 비율보다 오브젝트가 작아야 함
+        if (objectSize > 0f && objectSize < playerDiameter / attachSizeRatio)
         {
-            float playerSize = sphereCol.radius * transform.localScale.x * 2f;
-            float objectSize = GetObjectSize(collision.gameObject);
-
-            Debug.Log($"플레이어 콜라이더 지름: {playerSize}");
-
-            // 붙임 조건: 플레이어 크기의 1/attachSizeRatio보다 작을 경우
-            if (objectSize > 0f && objectSize < playerSize / attachSizeRatio)
-            {
-                AttachObject(collision.gameObject, objectSize);
-            }
+            AttachObject(collision.gameObject, objectSize);
         }
     }
+
 
     // 오브젝트를 플레이어에 붙이고 콜라이더 반경을 증가시키는 함수
     private void AttachObject(GameObject obj, float objectSize)
@@ -137,8 +101,10 @@ public class PlayerController : MonoBehaviour
             rb.isKinematic = true;
             rb.detectCollisions = false;
         }
+
         // 부모로 붙이기
         obj.transform.SetParent(transform);
+
         // 플레이어 중심 방향 계산
         Vector3 dirFromCenter = (obj.transform.position - transform.position).normalized;
 
@@ -148,12 +114,8 @@ public class PlayerController : MonoBehaviour
 
         // 오브젝트 크기에 비례해 콜라이더 반경 증가
         float growAmount = objectSize * growthRatio;
-        sphereCol.radius += growAmount;
 
-        Debug.Log($"콜라이더 반경: {sphereCol.radius}");
-    }
-    public float GetRadius()
-    {
-        return sphereCol.radius * transform.localScale.x;
+        // 콜라이더 반경 증가
+        sphereCol.radius += growAmount;
     }
 }

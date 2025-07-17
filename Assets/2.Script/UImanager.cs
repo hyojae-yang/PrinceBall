@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
         if (gameManager != null && targetText != null)
         {
             float target = gameManager.TargetDiameter;
-            targetText.text = $"Target: {target * 100f:F0}cm";
+            targetText.text = $"Target: {FormatSize(target)}";
         }
 
         // 결과 패널 비활성화
@@ -42,7 +42,7 @@ public class UIManager : MonoBehaviour
         {
             float radius = playerController.GetRadius();
             float diameter = radius * 2f;
-            sizeText.text = $"Size: \n{diameter * 100f:F2}cm";
+            sizeText.text = $"Size:\n{FormatSize(diameter)}";
         }
 
         if (gameManager != null && timeText != null)
@@ -76,5 +76,15 @@ public class UIManager : MonoBehaviour
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    /// 실수 단위 미터를 받아 M, CM, MM 형식 문자열로 변환
+    /// </summary>
+    private string FormatSize(float meters)
+    {
+        int m = Mathf.FloorToInt(meters);                          // 정수 미터
+        int cm = Mathf.FloorToInt((meters * 100f) % 100f);         // 소수점 아래 센티미터
+        int mm = Mathf.FloorToInt((meters * 1000f) % 10f) * 10;     // 남은 소수점 밀리미터 (10의 자리로)
+
+        return $"{m}m {cm}cm {mm}mm";
     }
 }
