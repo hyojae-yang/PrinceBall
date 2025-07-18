@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.08
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &16182923248410904
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &53954698605898472
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,6 +424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &149989149490940375
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.05
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &243887745467346899
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,6 +836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.06
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &356466507127361292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,6 +1097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.07
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &402566594238698050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,6 +1248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &426250884665454030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,6 +1399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &559694787510475308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,6 +1658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.06
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &653600667341608603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,6 +1919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.6
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &783949269521433282
 GameObject:
   m_ObjectHideFlags: 0
@@ -2032,7 +2042,6 @@ GameObject:
   - component: {fileID: 7297428562596839925}
   - component: {fileID: 1770192824857305898}
   - component: {fileID: 430620710804190818}
-  - component: {fileID: 6557387417383466148}
   - component: {fileID: 5226559915535946296}
   m_Layer: 0
   m_Name: Book
@@ -2130,33 +2139,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &6557387417383466148
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 836699366886418913}
-  serializedVersion: 4
-  m_Mass: 0.8
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &5226559915535946296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2170,6 +2152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &883237479078424508
 GameObject:
   m_ObjectHideFlags: 0
@@ -2322,6 +2305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.05
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1043656203241008689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2474,6 +2458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.6
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1120895152704011871
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,6 +2609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1185522339284282002
 GameObject:
   m_ObjectHideFlags: 0
@@ -2636,7 +2622,6 @@ GameObject:
   - component: {fileID: 8894277840936052631}
   - component: {fileID: 2839578534407450642}
   - component: {fileID: 5969964579471078772}
-  - component: {fileID: 5164038644329762702}
   - component: {fileID: 4639762364577617832}
   m_Layer: 0
   m_Name: Doll (3)
@@ -2736,33 +2721,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5164038644329762702
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1185522339284282002}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &4639762364577617832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2776,6 +2734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.4
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1191005990824957162
 GameObject:
   m_ObjectHideFlags: 0
@@ -3036,6 +2995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.6
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1217491530629570895
 GameObject:
   m_ObjectHideFlags: 0
@@ -3186,6 +3146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.06
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1317841792203553589
 GameObject:
   m_ObjectHideFlags: 0
@@ -3338,6 +3299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.6
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1469048644955706755
 GameObject:
   m_ObjectHideFlags: 0
@@ -3490,6 +3452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.6
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1633726913695497901
 GameObject:
   m_ObjectHideFlags: 0
@@ -3640,6 +3603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.08
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1638004081387404346
 GameObject:
   m_ObjectHideFlags: 0
@@ -3716,6 +3680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 3
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1650520012641629089
 GameObject:
   m_ObjectHideFlags: 0
@@ -3866,6 +3831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1651717919620623692
 GameObject:
   m_ObjectHideFlags: 0
@@ -4018,6 +3984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.07
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1651747051000193639
 GameObject:
   m_ObjectHideFlags: 0
@@ -4170,6 +4137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.6
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1813021066055194037
 GameObject:
   m_ObjectHideFlags: 0
@@ -4322,6 +4290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.07
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1838383431459707502
 GameObject:
   m_ObjectHideFlags: 0
@@ -4472,6 +4441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.06
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1930854031675833371
 GameObject:
   m_ObjectHideFlags: 0
@@ -4624,6 +4594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.05
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1952330463151409618
 GameObject:
   m_ObjectHideFlags: 0
@@ -4776,6 +4747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.05
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2195918740179048887
 GameObject:
   m_ObjectHideFlags: 0
@@ -4788,7 +4760,6 @@ GameObject:
   - component: {fileID: 8320867379228959858}
   - component: {fileID: 6929491288691177107}
   - component: {fileID: 5663320219752168046}
-  - component: {fileID: 5221972279447680748}
   - component: {fileID: 6172011097546732862}
   m_Layer: 0
   m_Name: Book (4)
@@ -4886,33 +4857,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5221972279447680748
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2195918740179048887}
-  serializedVersion: 4
-  m_Mass: 0.8
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &6172011097546732862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4926,6 +4870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2278427846718050086
 GameObject:
   m_ObjectHideFlags: 0
@@ -5048,6 +4993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2287956314771737495
 GameObject:
   m_ObjectHideFlags: 0
@@ -5200,6 +5146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.07
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2424512976504531092
 GameObject:
   m_ObjectHideFlags: 0
@@ -5352,6 +5299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.05
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2514137193634351746
 GameObject:
   m_ObjectHideFlags: 0
@@ -5502,6 +5450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.06
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2516604161561731527
 GameObject:
   m_ObjectHideFlags: 0
@@ -5654,6 +5603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.07
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2569181632595284302
 GameObject:
   m_ObjectHideFlags: 0
@@ -5804,6 +5754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.06
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2664114508398201754
 GameObject:
   m_ObjectHideFlags: 0
@@ -5954,6 +5905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.06
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2676871543881214176
 GameObject:
   m_ObjectHideFlags: 0
@@ -6076,6 +6028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2805764541779253361
 GameObject:
   m_ObjectHideFlags: 0
@@ -6226,6 +6179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.09
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2914879806438934597
 GameObject:
   m_ObjectHideFlags: 0
@@ -6561,6 +6515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.08
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &3238879323857916159
 GameObject:
   m_ObjectHideFlags: 0
@@ -6713,6 +6668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.05
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &3270170647037402254
 GameObject:
   m_ObjectHideFlags: 0
@@ -6835,6 +6791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &3270456599620400124
 GameObject:
   m_ObjectHideFlags: 0
@@ -6955,7 +6912,6 @@ GameObject:
   - component: {fileID: 174712914238228037}
   - component: {fileID: 2335195333435143731}
   - component: {fileID: 7864864320888801889}
-  - component: {fileID: 8578470025408759157}
   - component: {fileID: 2716902457766596000}
   m_Layer: 0
   m_Name: Doll (1)
@@ -7055,33 +7011,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &8578470025408759157
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3294917295856444925}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &2716902457766596000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7095,6 +7024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.4
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &3437629771423172593
 GameObject:
   m_ObjectHideFlags: 0
@@ -7353,6 +7283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.09
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &3567140229224088790
 GameObject:
   m_ObjectHideFlags: 0
@@ -7475,6 +7406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &3631087738602916668
 GameObject:
   m_ObjectHideFlags: 0
@@ -7627,6 +7559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.6
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &3897675986472415458
 GameObject:
   m_ObjectHideFlags: 0
@@ -7749,6 +7682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &3999929692002213535
 GameObject:
   m_ObjectHideFlags: 0
@@ -7871,6 +7805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &4084134427104002272
 GameObject:
   m_ObjectHideFlags: 0
@@ -8131,6 +8066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.6
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &4120489745423951770
 GameObject:
   m_ObjectHideFlags: 0
@@ -8281,6 +8217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.2
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &4220749910839106916
 GameObject:
   m_ObjectHideFlags: 0
@@ -8433,6 +8370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.6
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &4280624481288376477
 GameObject:
   m_ObjectHideFlags: 0
@@ -8583,6 +8521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.06
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &4491290345400136057
 GameObject:
   m_ObjectHideFlags: 0
@@ -8733,6 +8672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 1.5
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &4500334024784775896
 GameObject:
   m_ObjectHideFlags: 0
@@ -8883,6 +8823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.09
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &4587210869313184763
 GameObject:
   m_ObjectHideFlags: 0
@@ -8895,7 +8836,6 @@ GameObject:
   - component: {fileID: 754709512292767746}
   - component: {fileID: 5887053217837332839}
   - component: {fileID: 3429724101701357471}
-  - component: {fileID: 7955132041658108507}
   - component: {fileID: 8240437361327428255}
   m_Layer: 0
   m_Name: Doll (7)
@@ -8995,33 +8935,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &7955132041658108507
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4587210869313184763}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &8240437361327428255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9035,6 +8948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.4
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &4641944041658451629
 GameObject:
   m_ObjectHideFlags: 0
@@ -9185,6 +9099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.08
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &4807357061067934775
 GameObject:
   m_ObjectHideFlags: 0
@@ -9521,7 +9436,6 @@ GameObject:
   - component: {fileID: 1885820112360762497}
   - component: {fileID: 937065598359863299}
   - component: {fileID: 3291685739140641645}
-  - component: {fileID: 6752805529387606516}
   - component: {fileID: 4870993710828273904}
   m_Layer: 0
   m_Name: Book (1)
@@ -9619,33 +9533,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &6752805529387606516
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4934149151972603444}
-  serializedVersion: 4
-  m_Mass: 0.5
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &4870993710828273904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9659,6 +9546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5135829255852903631
 GameObject:
   m_ObjectHideFlags: 0
@@ -9671,7 +9559,6 @@ GameObject:
   - component: {fileID: 1048677786543742542}
   - component: {fileID: 2391313596739674727}
   - component: {fileID: 856742770971100702}
-  - component: {fileID: 1393361715973899982}
   - component: {fileID: 8790579040990671433}
   m_Layer: 0
   m_Name: Doll (10)
@@ -9771,33 +9658,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1393361715973899982
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5135829255852903631}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &8790579040990671433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9811,6 +9671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.4
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5197316860891199857
 GameObject:
   m_ObjectHideFlags: 0
@@ -9933,6 +9794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5219953618071342166
 GameObject:
   m_ObjectHideFlags: 0
@@ -10083,6 +9945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5367957535102503792
 GameObject:
   m_ObjectHideFlags: 0
@@ -10233,6 +10096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.08
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5398705149073746838
 GameObject:
   m_ObjectHideFlags: 0
@@ -10383,6 +10247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.06
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5414813036403501204
 GameObject:
   m_ObjectHideFlags: 0
@@ -10505,6 +10370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5454937554766871281
 GameObject:
   m_ObjectHideFlags: 0
@@ -10657,6 +10523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.05
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5521048533875120822
 GameObject:
   m_ObjectHideFlags: 0
@@ -10807,6 +10674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.09
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5556332786788845215
 GameObject:
   m_ObjectHideFlags: 0
@@ -11067,6 +10935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.07
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5611181983277592506
 GameObject:
   m_ObjectHideFlags: 0
@@ -11217,6 +11086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.09
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5635377443129935197
 GameObject:
   m_ObjectHideFlags: 0
@@ -11339,6 +11209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5672424259067452539
 GameObject:
   m_ObjectHideFlags: 0
@@ -11505,6 +11376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5728861424103227453
 GameObject:
   m_ObjectHideFlags: 0
@@ -11809,6 +11681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.05
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5928835287510082812
 GameObject:
   m_ObjectHideFlags: 0
@@ -11961,6 +11834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.07
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5947203139183466393
 GameObject:
   m_ObjectHideFlags: 0
@@ -12083,6 +11957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6003536072034609646
 GameObject:
   m_ObjectHideFlags: 0
@@ -12235,6 +12110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.6
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6144851757364364289
 GameObject:
   m_ObjectHideFlags: 0
@@ -12385,6 +12261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.09
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6145054554490277872
 GameObject:
   m_ObjectHideFlags: 0
@@ -12511,6 +12388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 5
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6184706097613282868
 GameObject:
   m_ObjectHideFlags: 0
@@ -12523,7 +12401,6 @@ GameObject:
   - component: {fileID: 7891684371016141221}
   - component: {fileID: 6251818623595901072}
   - component: {fileID: 7601027106685685514}
-  - component: {fileID: 8016896175328976784}
   - component: {fileID: 6222965083284334728}
   m_Layer: 0
   m_Name: Doll (2)
@@ -12623,33 +12500,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &8016896175328976784
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6184706097613282868}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &6222965083284334728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12663,6 +12513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.4
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6379668049901982943
 GameObject:
   m_ObjectHideFlags: 0
@@ -12675,7 +12526,6 @@ GameObject:
   - component: {fileID: 708191053667113483}
   - component: {fileID: 7797564811588858679}
   - component: {fileID: 3074612055812161603}
-  - component: {fileID: 2927590618716435776}
   - component: {fileID: 5713571373565789985}
   m_Layer: 0
   m_Name: Book (2)
@@ -12773,33 +12623,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &2927590618716435776
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6379668049901982943}
-  serializedVersion: 4
-  m_Mass: 0.8
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &5713571373565789985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12813,6 +12636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6416862430039196410
 GameObject:
   m_ObjectHideFlags: 0
@@ -12825,7 +12649,6 @@ GameObject:
   - component: {fileID: 7693742094418061467}
   - component: {fileID: 5831217819969013932}
   - component: {fileID: 639854280245104484}
-  - component: {fileID: 6877285284508552941}
   - component: {fileID: 270366981128164305}
   m_Layer: 0
   m_Name: Doll (5)
@@ -12925,33 +12748,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &6877285284508552941
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6416862430039196410}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &270366981128164305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12965,6 +12761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.4
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6445185921301416074
 GameObject:
   m_ObjectHideFlags: 0
@@ -13115,6 +12912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.09
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6464963210189611240
 GameObject:
   m_ObjectHideFlags: 0
@@ -13237,6 +13035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6529155234829359825
 GameObject:
   m_ObjectHideFlags: 0
@@ -13359,6 +13158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6631735161645310365
 GameObject:
   m_ObjectHideFlags: 0
@@ -13511,6 +13311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.6
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6663246381964369142
 GameObject:
   m_ObjectHideFlags: 0
@@ -13633,6 +13434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6679314797499818158
 GameObject:
   m_ObjectHideFlags: 0
@@ -13783,6 +13585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.08
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6728365482316771196
 GameObject:
   m_ObjectHideFlags: 0
@@ -13795,7 +13598,6 @@ GameObject:
   - component: {fileID: 4281955620275077549}
   - component: {fileID: 8462251318783925153}
   - component: {fileID: 1116423508113263528}
-  - component: {fileID: 8195498499493720243}
   m_Layer: 0
   m_Name: "\uC4F0\uB808\uAE30\uD1B5"
   m_TagString: PickUp
@@ -13894,33 +13696,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!54 &8195498499493720243
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6728365482316771196}
-  serializedVersion: 4
-  m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &6747518921814093904
 GameObject:
   m_ObjectHideFlags: 0
@@ -14071,6 +13846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6760499227354132297
 GameObject:
   m_ObjectHideFlags: 0
@@ -14223,6 +13999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.05
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6851176955680834745
 GameObject:
   m_ObjectHideFlags: 0
@@ -14345,6 +14122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6886182270107269507
 GameObject:
   m_ObjectHideFlags: 0
@@ -14357,7 +14135,6 @@ GameObject:
   - component: {fileID: 8768182228988556255}
   - component: {fileID: 7713545529521643638}
   - component: {fileID: 8244732024241513998}
-  - component: {fileID: 9084470964948400786}
   - component: {fileID: 8217676968937819539}
   m_Layer: 0
   m_Name: Doll
@@ -14457,33 +14234,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &9084470964948400786
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6886182270107269507}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &8217676968937819539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14497,6 +14247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.4
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6922956990005110699
 GameObject:
   m_ObjectHideFlags: 0
@@ -14619,6 +14370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6943604605075480104
 GameObject:
   m_ObjectHideFlags: 0
@@ -14808,6 +14560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.07
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7135886653842611953
 GameObject:
   m_ObjectHideFlags: 0
@@ -14820,7 +14573,6 @@ GameObject:
   - component: {fileID: 8459238377351467767}
   - component: {fileID: 3587608091576177924}
   - component: {fileID: 8975348251101579170}
-  - component: {fileID: 3320462116054403392}
   - component: {fileID: 921724267435284443}
   m_Layer: 0
   m_Name: Doll (6)
@@ -14920,33 +14672,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &3320462116054403392
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7135886653842611953}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &921724267435284443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14960,6 +14685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.4
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7170424584252776869
 GameObject:
   m_ObjectHideFlags: 0
@@ -14972,7 +14698,6 @@ GameObject:
   - component: {fileID: 7057933957537502296}
   - component: {fileID: 5145482064970383206}
   - component: {fileID: 8050751114328393856}
-  - component: {fileID: 6635731047308416529}
   - component: {fileID: 2954229455847712227}
   m_Layer: 0
   m_Name: pan
@@ -15072,33 +14797,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!54 &6635731047308416529
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7170424584252776869}
-  serializedVersion: 4
-  m_Mass: 0.02
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &2954229455847712227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15112,6 +14810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.12
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7170992672837044879
 GameObject:
   m_ObjectHideFlags: 0
@@ -15262,6 +14961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.08
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7182884865941705037
 GameObject:
   m_ObjectHideFlags: 0
@@ -15522,6 +15222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.6
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7259336075267519207
 GameObject:
   m_ObjectHideFlags: 0
@@ -15672,6 +15373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7261834265992243226
 GameObject:
   m_ObjectHideFlags: 0
@@ -15796,6 +15498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.3
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7332435390657646698
 GameObject:
   m_ObjectHideFlags: 0
@@ -15946,6 +15649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.06
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7333997606509180414
 GameObject:
   m_ObjectHideFlags: 0
@@ -15958,7 +15662,6 @@ GameObject:
   - component: {fileID: 5625303528637054840}
   - component: {fileID: 7629120020929479749}
   - component: {fileID: 4195994830477099345}
-  - component: {fileID: 5538917536391161173}
   - component: {fileID: 7036374326942944298}
   m_Layer: 0
   m_Name: Doll (9)
@@ -16058,33 +15761,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5538917536391161173
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7333997606509180414}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &7036374326942944298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16098,6 +15774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.4
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7358008661587227515
 GameObject:
   m_ObjectHideFlags: 0
@@ -16250,6 +15927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.6
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7364922114194691603
 GameObject:
   m_ObjectHideFlags: 0
@@ -16442,6 +16120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7618153688878136819
 GameObject:
   m_ObjectHideFlags: 0
@@ -16592,6 +16271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.08
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7694534347907589329
 GameObject:
   m_ObjectHideFlags: 0
@@ -16742,6 +16422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.09
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7759788498683153035
 GameObject:
   m_ObjectHideFlags: 0
@@ -17002,6 +16683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.07
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7900682068012709860
 GameObject:
   m_ObjectHideFlags: 0
@@ -17152,6 +16834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7976530918370376032
 GameObject:
   m_ObjectHideFlags: 0
@@ -17274,6 +16957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8037252821640723159
 GameObject:
   m_ObjectHideFlags: 0
@@ -17353,6 +17037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 2
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8050510182709509815
 GameObject:
   m_ObjectHideFlags: 0
@@ -17365,7 +17050,6 @@ GameObject:
   - component: {fileID: 6904474396415780522}
   - component: {fileID: 114926000249946396}
   - component: {fileID: 5705887967714892953}
-  - component: {fileID: 6984335945423468457}
   - component: {fileID: 8358000015674759662}
   m_Layer: 0
   m_Name: Book (3)
@@ -17463,33 +17147,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &6984335945423468457
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8050510182709509815}
-  serializedVersion: 4
-  m_Mass: 0.8
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &8358000015674759662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17503,6 +17160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8120969250692020962
 GameObject:
   m_ObjectHideFlags: 0
@@ -17655,6 +17313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.05
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8162303062853564446
 GameObject:
   m_ObjectHideFlags: 0
@@ -17777,6 +17436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8272053685063023399
 GameObject:
   m_ObjectHideFlags: 0
@@ -17899,6 +17559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8347827942962585229
 GameObject:
   m_ObjectHideFlags: 0
@@ -18049,6 +17710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.6
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8351039256335336548
 GameObject:
   m_ObjectHideFlags: 0
@@ -18199,6 +17861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.09
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8392408643396483531
 GameObject:
   m_ObjectHideFlags: 0
@@ -18349,6 +18012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8397453278713619672
 GameObject:
   m_ObjectHideFlags: 0
@@ -18501,6 +18165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.07
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8423999676612429057
 GameObject:
   m_ObjectHideFlags: 0
@@ -18651,6 +18316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.4
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8431619644236716355
 GameObject:
   m_ObjectHideFlags: 0
@@ -18801,6 +18467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8481120141044791627
 GameObject:
   m_ObjectHideFlags: 0
@@ -18813,7 +18480,6 @@ GameObject:
   - component: {fileID: 1938724287989080449}
   - component: {fileID: 610587876274128094}
   - component: {fileID: 1937106414664091697}
-  - component: {fileID: 2009792609749523500}
   - component: {fileID: 841987992741487039}
   m_Layer: 0
   m_Name: Doll (8)
@@ -18913,33 +18579,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &2009792609749523500
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8481120141044791627}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &841987992741487039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18953,6 +18592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.4
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8488267635970471091
 GameObject:
   m_ObjectHideFlags: 0
@@ -19211,6 +18851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.09
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8627924749463344056
 GameObject:
   m_ObjectHideFlags: 0
@@ -19361,6 +19002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.08
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8643719641131782312
 GameObject:
   m_ObjectHideFlags: 0
@@ -19373,7 +19015,6 @@ GameObject:
   - component: {fileID: 7478566851635398636}
   - component: {fileID: 8724571109246618377}
   - component: {fileID: 6235205852979218859}
-  - component: {fileID: 8507043401191294125}
   - component: {fileID: 812710549606689848}
   m_Layer: 0
   m_Name: Doll (4)
@@ -19473,33 +19114,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &8507043401191294125
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8643719641131782312}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &812710549606689848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19513,6 +19127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.4
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8660594037998049001
 GameObject:
   m_ObjectHideFlags: 0
@@ -19665,6 +19280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.6
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8676704473920382175
 GameObject:
   m_ObjectHideFlags: 0
@@ -19785,7 +19401,6 @@ GameObject:
   - component: {fileID: 4349676532098221777}
   - component: {fileID: 4252992596944362759}
   - component: {fileID: 1732285335724894795}
-  - component: {fileID: 2576651291002142696}
   - component: {fileID: 7227625014345581670}
   m_Layer: 0
   m_Name: Book (5)
@@ -19883,33 +19498,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &2576651291002142696
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8701009755916626233}
-  serializedVersion: 4
-  m_Mass: 0.8
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &7227625014345581670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19923,6 +19511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 1
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8711575254314505528
 GameObject:
   m_ObjectHideFlags: 0
@@ -20073,6 +19662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.08
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8732973607440708848
 GameObject:
   m_ObjectHideFlags: 0
@@ -20303,6 +19893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8977015314439359634
 GameObject:
   m_ObjectHideFlags: 0
@@ -20425,6 +20016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.02
+  attachOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8977394391716415043
 GameObject:
   m_ObjectHideFlags: 0
@@ -20674,3 +20266,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeValue: 0.6
+  attachOffset: {x: 0, y: 0, z: 0}

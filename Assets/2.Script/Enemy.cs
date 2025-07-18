@@ -1,30 +1,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+
 /// <summary>
-/// 플레이어와 충돌 시, 플레이어보다 일정 크기 이상이면 반응하는 '분리자' 역할의 오브젝트
-/// + 일직선 왕복 자동 이동 기능 포함
+/// 플레이어보다 일정 크기 이상일 경우 플레이어의 오브젝트를 분리시키는 에너미
+/// + 자동 왕복 이동
 /// + PickupObject 분리 기능 포함
+/// + 플레이어 충돌 시 튕겨져 나가는 힘 적용 (리지드바디 유무 고려)
 /// </summary>
-[RequireComponent(typeof(PickupObject))]
 public class Enemy : MonoBehaviour
 {
     [Header("플레이어보다 얼마나 커야 반응하는가")]
-    public float sizeThresholdMultiplier = 1.2f; // 플레이어보다 몇 배 이상 크면 반응할지
+    public float sizeThresholdMultiplier = 1.2f;
 
     [Header("자동 이동 설정")]
-    public Vector3 moveDirection = Vector3.forward; // 로컬 기준 이동 방향
-    public float moveDistance = 3f;                 // 이동 거리 (한 방향 최대 거리)
-    public float moveSpeed = 2f;                    // 이동 속도 (m/s)
+    public Vector3 moveDirection = Vector3.forward;
+    public float moveDistance = 3f;
+    public float moveSpeed = 2f;
 
     [Header("분리 쿨다운 설정")]
-    public float dropCooldown = 1f;                 // 분리 후 몇 초간 다시 분리 못하게 막을지
+    public float dropCooldown = 1f;
+
+    [Header("충돌 튕겨내기 힘 세기")]
+    public float bounceForce = 5f;
 
     private Vector3 startPos;
     private int moveDirSign = 1;
 
     private PickupObject pickup;
     private bool hasRecentlyTriggered = false;
+
+    // 플레이어에 붙었는지 여부
+    private bool isAttached = false;
 
     private void Awake()
     {
@@ -34,6 +41,9 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (isAttached)
+            return;
+
         MoveEnemy();
     }
 
@@ -43,8 +53,6 @@ public class Enemy : MonoBehaviour
     private void MoveEnemy()
     {
         Vector3 dirNormalized = moveDirection.normalized;
-
-        // 이동 방향 * 속도 * 시간 * 부호
         Vector3 offset = dirNormalized * moveSpeed * moveDirSign * Time.deltaTime;
         transform.position += offset;
 
@@ -55,19 +63,19 @@ public class Enemy : MonoBehaviour
         {
             moveDirSign = -1;
             transform.position = startPos + dirNormalized * moveDistance;
-            transform.rotation = Quaternion.Euler(0f, 0f, 270f); // 반대방향
+            transform.rotation = Quaternion.Euler(0f, 0f, 270f);
         }
         else if (projectedDistance < 0f)
         {
             moveDirSign = 1;
             transform.position = startPos;
-            transform.rotation = Quaternion.Euler(0f, 0f, 90f);  // 원래 방향
+            transform.rotation = Quaternion.Euler(0f, 0f, 90f);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (hasRecentlyTriggered)
+        if (hasRecentlyTriggered || isAttached)
             return;
 
         PlayerController player = collision.gameObject.GetComponent<PlayerController>();
@@ -81,10 +89,12 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("플레이어보다 크므로 분리 조건 충족!");
 
-            // 분리 기능 실행
-            DropFromPlayer(player.gameObject);
+            // DropFromPlayer가 List<Transform> 반환하도록 수정 후,
+            List<Transform> droppedObjects = DropFromPlayer(player);
 
-            // 중복 방지 쿨다운
+            // 분리된 오브젝트만 튕겨내기
+            BounceObjects(player, droppedObjects);
+
             hasRecentlyTriggered = true;
             Invoke(nameof(ResetTrigger), dropCooldown);
         }
@@ -94,57 +104,135 @@ public class Enemy : MonoBehaviour
         }
     }
 
-/// <summary>
-/// 플레이어에 붙은 자식 오브젝트 중 일부를 랜덤하게 떼어냅니다.
-/// </summary>
-private void DropFromPlayer(GameObject playerObj)
-{
-    // 플레이어의 자식 중 PickupObject 컴포넌트를 가진 오브젝트만 수집
-    List<PickupObject> pickups = new List<PickupObject>();
 
-    foreach (Transform child in playerObj.transform)
+    /// <summary>
+    /// 플레이어에 붙은 오브젝트들 중 일부를 랜덤하게 떼어냄
+    /// </summary>
+    private List<Transform> DropFromPlayer(PlayerController player)
     {
-        var pickup = child.GetComponent<PickupObject>();
-        if (pickup != null)
-            pickups.Add(pickup);
-    }
+        GameObject playerObj = player.gameObject;
+        List<PickupObject> pickups = new List<PickupObject>();
 
-    if (pickups.Count == 0)
-    {
-        Debug.Log("분리할 오브젝트가 없음");
-        return;
-    }
-
-    // 분리할 개수 (예: 3개까지)
-    int dropCount = Mathf.Min(5, pickups.Count);
-
-    // 리스트를 랜덤하게 섞고, 일부만 선택
-    var randomPickups = pickups.OrderBy(x => Random.value).Take(dropCount).ToList();
-
-    foreach (var pickup in randomPickups)
-    {
-        Transform obj = pickup.transform;
-
-        obj.parent = null; // 부모에서 분리
-
-        // 리지드바디 물리 활성화
-        Rigidbody rb = obj.GetComponent<Rigidbody>();
-        if (rb != null)
+        // 플레이어 자식 중 PickupObject 컴포넌트가 있는 것들을 수집
+        foreach (Transform child in playerObj.transform)
         {
-            rb.isKinematic = false;
-            rb.linearVelocity = Vector3.zero;
+            var pickup = child.GetComponent<PickupObject>();
+            if (pickup != null)
+                pickups.Add(pickup);
         }
 
-        Debug.Log($"랜덤 분리됨: {obj.name}");
+        if (pickups.Count == 0)
+        {
+            return new List<Transform>(); // 분리할 게 없으면 빈 리스트 반환
+        }
+
+        int dropCount = Mathf.Min(5, pickups.Count);
+        var randomPickups = pickups.OrderBy(x => Random.value).Take(dropCount).ToList();
+
+        float totalShrinkAmount = 0f;
+        List<Transform> droppedObjects = new List<Transform>(); // 분리된 오브젝트 리스트
+
+        foreach (var pickup in randomPickups)
+        {
+            Transform obj = pickup.transform;
+            obj.parent = null;
+
+            Rigidbody rb = obj.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.isKinematic = false;
+                rb.linearVelocity = Vector3.zero; // linearVelocity → velocity 로 수정
+                                            // 튕기는 힘은 여기서 제거합니다
+            }
+
+            totalShrinkAmount += pickup.GetGrowthAmount();
+            droppedObjects.Add(obj);
+
+            Debug.Log($"랜덤 분리됨: {obj.name}");
+        }
+
+        if (totalShrinkAmount > 0f)
+        {
+            player.ShrinkBy(totalShrinkAmount);
+            Debug.Log($"플레이어 크기 감소: {totalShrinkAmount}");
+        }
+
+        return droppedObjects; // 분리된 오브젝트 리스트 반환
     }
-}
 
 
-/// <summary>
-/// 일정 시간 후 다시 반응 가능하게 초기화
-/// </summary>
-private void ResetTrigger()
+    /// <summary>
+    /// 플레이어와 부딪친 후 튕겨져 나가게 하는 함수
+    /// 리지드바디가 없으면 위치만 살짝 밀어내는 방식 적용
+    /// </summary>
+    private void BounceObjects(PlayerController player, List<Transform> droppedObjects)
+    {
+        Rigidbody playerRb = player.GetComponent<Rigidbody>();
+        float scaledBounceForce = bounceForce * player.GetRadius();
+        // 플레이볼 튕겨질 방향에 Y축 위쪽 성분 추가 (0.5f 정도 올려주기)
+        Vector3 bounceDir = (player.transform.position - transform.position).normalized + Vector3.up * 0.5f;
+        bounceDir.Normalize();
+
+        // 플레이어 볼 튕겨내기
+        if (playerRb != null)
+        {
+            playerRb.AddForce(bounceDir * scaledBounceForce, ForceMode.Impulse);
+        }
+        else
+        {
+            player.transform.position += bounceDir * 0.5f;
+        }
+
+        foreach (var objTransform in droppedObjects)
+        {
+            Rigidbody rb = objTransform.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                // 플레이어 중심을 기준으로 방향 계산
+                Vector3 baseDir = (objTransform.position - player.transform.position).normalized;
+
+                // 랜덤 확산 추가 (더 자연스럽게)
+                Vector3 randomSpread = new Vector3(
+                    Random.Range(-0.3f, 0.3f),
+                    Random.Range(0.6f, 1.0f),  // 위로 튕기는 성분 강조
+                    Random.Range(-0.3f, 0.3f)
+                );
+
+                Vector3 forceDir = (baseDir + randomSpread).normalized;
+
+                rb.isKinematic = false;
+                rb.useGravity = true;
+                rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+
+                // 살짝 띄워서 박힘 방지
+                objTransform.position += Vector3.up * 0.2f;
+
+                // 스케일링된 힘 적용
+                rb.AddForce(forceDir * scaledBounceForce, ForceMode.Impulse);
+            }
+            else
+            {
+                // 리지드바디 없는 경우도 비슷한 방향으로 약하게 밀기
+                Vector3 fallbackDir = (objTransform.position - player.transform.position).normalized + Vector3.up * 0.5f;
+                objTransform.position += fallbackDir.normalized * 0.3f;
+            }
+        }
+
+    }
+
+
+
+    private void ResetTrigger()
     {
         hasRecentlyTriggered = false;
+    }
+
+    /// <summary>
+    /// 플레이어에 붙을 때 호출되는 메서드 (기능 정지용)
+    /// </summary>
+    public void OnAttachedToPlayer()
+    {
+        isAttached = true;
+        StopAllCoroutines();
     }
 }
