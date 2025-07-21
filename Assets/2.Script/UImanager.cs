@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 /// <summary>
 /// 게임 UI 표시 및 결과 패널 관리
@@ -77,14 +78,26 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    /// 실수 단위 미터를 받아 M, CM, MM 형식 문자열로 변환
+    /// <summary>
+    /// 실수 단위 미터를 받아 M, CM, MM 형식 문자열로 변환합니다.
+    /// 단, 1m 이상이면 mm는 생략되고, m이 0이면 m 단위는 표시하지 않습니다.
     /// </summary>
     private string FormatSize(float meters)
     {
-        int m = Mathf.FloorToInt(meters);                          // 정수 미터
-        int cm = Mathf.FloorToInt((meters * 100f) % 100f);         // 소수점 아래 센티미터
-        int mm = Mathf.FloorToInt((meters * 1000f) % 10f) * 10;     // 남은 소수점 밀리미터 (10의 자리로)
+        int m = Mathf.FloorToInt(meters);                             // 정수 미터
+        int cm = Mathf.FloorToInt((meters * 100f) % 100f);            // 센티미터
+        int mm = Mathf.FloorToInt((meters * 1000f) % 10f) * 10;       // 밀리미터 (10의 자리로 계산)
 
-        return $"{m}m {cm}cm {mm}mm";
+        List<string> parts = new List<string>();
+
+        if (m > 0)
+            parts.Add($"{m}m");
+        if (cm > 0 || m == 0) // m이 0일 땐 cm라도 보여야 함
+            parts.Add($"{cm}cm");
+        if (m < 1 && mm > 0)  // 1m 미만일 때만 mm 표시
+            parts.Add($"{mm}mm");
+
+        return string.Join(" ", parts);
     }
+
 }

@@ -39,21 +39,27 @@ public class PlayerController : MonoBehaviour
         Vector3 camForward = Camera.main.transform.forward;
         Vector3 camRight = Camera.main.transform.right;
 
+        // y축 제거 후 정규화해서 방향 보정
         camForward.y = 0;
         camRight.y = 0;
         camForward.Normalize();
         camRight.Normalize();
 
+        // 카메라 기준 입력 방향 계산
         Vector3 moveDir = camForward * v + camRight * h;
         Vector3 moveOffset = moveDir.normalized * moveSpeed * Time.fixedDeltaTime;
 
         rb.MovePosition(rb.position + moveOffset);
 
+        // 공 회전 시뮬레이션 (접지 회전 축 기준)
         Vector3 rotateAxis = Vector3.Cross(Vector3.up, moveDir.normalized);
         float rotationAmount = 200f * Time.fixedDeltaTime;
         transform.Rotate(rotationAmount * rotateAxis, Space.World);
     }
 
+    /// <summary>
+    /// 현재 플레이어의 월드 반지름 (스케일 반영)
+    /// </summary>
     public float GetRadius()
     {
         return sphereCol.radius * transform.localScale.x;
@@ -64,7 +70,7 @@ public class PlayerController : MonoBehaviour
         if (!collision.gameObject.TryGetComponent<PickupObject>(out var pickup))
             return;
 
-        float playerDiameter = sphereCol.radius * transform.localScale.x * 2f;
+        float playerDiameter = GetRadius() * 2f;
         float objectSize = pickup.GetSizeValue();
 
         if (objectSize > 0f && objectSize < playerDiameter / attachSizeRatio)
@@ -73,93 +79,69 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 충돌한 오브젝트를 플레이어에 부착
+    /// </summary>
     private void AttachObject(GameObject obj, float objectSize)
     {
-        // Rigidbody가 있다면 물리 비활성화 (붙을 때 물리 영향 끔)
-        Rigidbody objRb = obj.GetComponent<Rigidbody>();
-        if (objRb != null)
+        // Rigidbody 비활성화 (물리 영향 제거)
+        if (obj.TryGetComponent<Rigidbody>(out var objRb))
         {
             objRb.isKinematic = true;
             objRb.detectCollisions = false;
         }
 
-        // 부모-자식 관계 설정으로 붙이기
+        // 부모-자식 관계 설정 (플레이어에 부착)
         obj.transform.SetParent(transform);
 
-        // Enemy 스크립트가 있다면 붙었을 때 기능 정지 호출
+        // 적일 경우 붙었을 때 기능 정지
         if (obj.TryGetComponent<Enemy>(out var enemy))
         {
             enemy.OnAttachedToPlayer();
         }
 
-        // 플레이어 중심 방향 계산 (붙을 방향)
+        // 방향 계산 (플레이어 중심 → 오브젝트 위치)
         Vector3 dirFromCenter = (obj.transform.position - transform.position).normalized;
 
-        // 플레이어 반지름 계산 (스케일 반영)
-        float playerRadius = sphereCol.radius * transform.localScale.x;
+        // 플레이어 월드 반지름 계산
+        float playerRadius = GetRadius();
 
-        // 오브젝트 콜라이더 합산 경계 계산 (자식 포함)
-        Collider[] objCols = obj.GetComponentsInChildren<Collider>();
+        // 오브젝트 전체 콜라이더 범위 계산 (자식 포함)
         float objectExtent = 0f;
+        Collider[] objCols = obj.GetComponentsInChildren<Collider>();
         if (objCols.Length > 0)
         {
-            Bounds combinedBounds = objCols[0].bounds;
+            Bounds bounds = objCols[0].bounds;
             for (int i = 1; i < objCols.Length; i++)
-            {
-                combinedBounds.Encapsulate(objCols[i].bounds);
-            }
-            objectExtent = combinedBounds.extents.magnitude;
+                bounds.Encapsulate(objCols[i].bounds);
+            objectExtent = bounds.extents.magnitude;
         }
         else
         {
-            // 콜라이더 없으면 objectSize 기준 반지름 추정
-            objectExtent = objectSize / 2f;
+            objectExtent = objectSize / 2f; // 추정치
         }
 
-        // PickupObject에서 오프셋 받아오기
-        Vector3 offset = Vector3.zero;
-        if (obj.TryGetComponent<PickupObject>(out var pickup))
-        {
-            offset = pickup.GetAttachOffset();
-        }
-
-        // 최종 부착 위치 계산 (플레이어 표면 + 오브젝트 반지름 + 여유 + 오프셋)
+        // 최종 부착 위치 = 플레이어 중심 + (반지름 + 오브젝트 크기 + 여유) * 방향
         float extraMargin = 0.01f;
         Vector3 attachPosition = transform.position + dirFromCenter * (playerRadius + objectExtent + extraMargin);
-        obj.transform.position = attachPosition + obj.transform.TransformVector(offset);
+        obj.transform.position = attachPosition;
 
-        // 구체 콜라이더 반경 증가
+        // 크기 성장 처리
         float growAmount = objectSize * growthRatio;
-        if (obj.TryGetComponent<PickupObject>(out var pickup2))
+        if (obj.TryGetComponent<PickupObject>(out var pickup))
         {
-            pickup2.SetGrowthAmount(growAmount);
+            pickup.SetGrowthAmount(growAmount);
         }
         sphereCol.radius += growAmount;
     }
 
+    /// <summary>
+    /// 플레이어 반지름 감소
+    /// </summary>
     public void ShrinkBy(float shrinkAmount)
     {
         sphereCol.radius -= shrinkAmount;
-        sphereCol.radius = Mathf.Max(0.1f, sphereCol.radius);
+        sphereCol.radius = Mathf.Max(0.1f, sphereCol.radius); // 최소 보정
     }
 
-    public void DetachObject(GameObject obj)
-    {
-        if (obj.TryGetComponent<PickupObject>(out var pickup))
-        {
-            float shrinkAmount = pickup.GetGrowthAmount();
-            ShrinkBy(shrinkAmount);
-
-            // 부모 해제
-            obj.transform.SetParent(null);
-
-            // Rigidbody 있으면 물리 다시 활성화
-            Rigidbody objRb = obj.GetComponent<Rigidbody>();
-            if (objRb != null)
-            {
-                objRb.isKinematic = false;
-                objRb.detectCollisions = true;
-            }
-        }
-    }
 }

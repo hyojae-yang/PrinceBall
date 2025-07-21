@@ -141,7 +141,7 @@ public class Enemy : MonoBehaviour
             if (rb != null)
             {
                 rb.isKinematic = false;
-                rb.linearVelocity = Vector3.zero; // linearVelocity → velocity 로 수정
+                rb.linearVelocity = Vector3.zero;
                                             // 튕기는 힘은 여기서 제거합니다
             }
 

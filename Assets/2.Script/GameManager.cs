@@ -6,10 +6,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [Header("목표 크기 (지름 기준)")]
-    public float targetDiameter = 10f;
+    public float targetDiameter;
 
     [Header("제한 시간 (초)")]
-    public float totalTime = 60f;
+    public float totalTime;
 
     [SerializeField] private PlayerController playerController;
 
