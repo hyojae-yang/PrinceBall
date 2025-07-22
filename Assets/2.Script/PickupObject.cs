@@ -29,6 +29,6 @@ public class PickupObject : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // 충돌한 오브젝트의 이름을 출력
-        Debug.Log($"[충돌] {gameObject.name}과'{collision.gameObject.name}' 와(과) 충돌함");
+        //Debug.Log($"[충돌] {gameObject.name}과'{collision.gameObject.name}' 와(과) 충돌함");
     }
 }

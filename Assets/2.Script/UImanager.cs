@@ -86,7 +86,7 @@ public class UIManager : MonoBehaviour
     {
         int m = Mathf.FloorToInt(meters);                             // 정수 미터
         int cm = Mathf.FloorToInt((meters * 100f) % 100f);            // 센티미터
-        int mm = Mathf.FloorToInt((meters * 1000f) % 10f) * 10;       // 밀리미터 (10의 자리로 계산)
+        int mm = Mathf.FloorToInt((meters * 1000f) % 10f);       // 밀리미터 (10의 자리로 계산)
 
         List<string> parts = new List<string>();
 

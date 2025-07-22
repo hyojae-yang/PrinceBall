@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     public float dropCooldown = 1f;
 
     [Header("Ãæµ¹ Æ¨°Ü³»±â Èû ¼¼±â")]
-    public float bounceForce = 5f;
+    public float bounceForce;
 
     private Vector3 startPos;
     private int moveDirSign = 1;
