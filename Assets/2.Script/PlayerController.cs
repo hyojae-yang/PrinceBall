@@ -124,6 +124,7 @@ public class PlayerController : MonoBehaviour
         }
         //실제 붙은 오브젝트의 월드위치
         obj.transform.position = tt; //콜라이더의 표면벡터
+     
         // 부모-자식 관계 설정 (플레이어에 부착)
         obj.transform.SetParent(transform);
 
