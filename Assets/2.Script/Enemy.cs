@@ -46,6 +46,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+       
         if (hasRecentlyTriggered || isAttached)
             return;
 
@@ -55,7 +56,7 @@ public class Enemy : MonoBehaviour
 
         float playerRadius = player.GetRadius();
         float myRadius = pickup.GetSizeValue() / 2f;
-
+     
         if (myRadius > playerRadius * sizeThresholdMultiplier)
         {
             Debug.Log("플레이어보다 크므로 분리 조건 충족!");

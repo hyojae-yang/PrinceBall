@@ -10,7 +10,7 @@ public class Rat : Enemy
     private Vector3 startPos;
     private int moveDirSign = 1;
 
-    protected void Awake()
+    protected new void Awake()
     {
         base.Awake();
         startPos = transform.position;
