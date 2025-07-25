@@ -13,6 +13,10 @@ public class PickupObject : MonoBehaviour
     private float growthAmountWhenAttached;
 
     /// <summary>
+    /// 플레이어에 붙을 때 호출되는 이벤트
+    /// </summary>
+    public event System.Action onAttached;
+    /// <summary>
     /// 오브젝트 크기 반환 (부착 조건 등에 사용)
     /// </summary>
     public float GetSizeValue() => sizeValue;
@@ -20,7 +24,12 @@ public class PickupObject : MonoBehaviour
     /// <summary>
     /// 플레이어에 붙을 때 계산된 성장량 저장
     /// </summary>
-    public void SetGrowthAmount(float amount) => growthAmountWhenAttached = amount;
+    public void SetGrowthAmount(float amount) 
+    { 
+        growthAmountWhenAttached = amount;
+        onAttached?.Invoke(); // 이벤트 발동
+    }
+
 
     /// <summary>
     /// 플레이어에서 떨어질 때 줄어들 크기 반환

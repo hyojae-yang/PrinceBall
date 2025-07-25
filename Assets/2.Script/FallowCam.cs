@@ -3,8 +3,8 @@ using UnityEngine;
 public class FallowCam : MonoBehaviour
 {
     GameObject player;
-    public Vector3 baseOffset = new Vector3(0, 0.5f, -0.5f);  // 기본 거리
-    public float distanceScale = 1.5f; // 공 크기에 곱할 비율
+    Vector3 baseOffset = new Vector3(0.1f, 0.5f, -0.5f);  // 기본 거리
+    float distanceScale = 3f; // 공 크기에 곱할 비율
 
     public float rotationSpeed = 5f; // 마우스 드래그 시 회전 속도
     public float minVerticalAngle = -30f; // 카메라 수직 최소 각도 제한
